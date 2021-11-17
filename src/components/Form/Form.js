@@ -37,13 +37,13 @@ const Form = ({ currentId, setCurrentId }) => {
   };
 
   // Is this a better and less messy and DRY approach?
-  function handleChange(event) {
-    const { name, value } = event.target;
-    setPostData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+  //   setPostData((prev) => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+  // }
 
   const clear = () => {
     setCurrentId(null);

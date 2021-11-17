@@ -63,7 +63,7 @@ const Auth = () => {
     setIsSignUp((prev) => {
       return !prev;
     });
-    handleShowPassword();
+    setShowPassword(false);
   };
 
   const googleSuccess = async (res) => {
