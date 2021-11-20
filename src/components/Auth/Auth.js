@@ -41,6 +41,7 @@ const Auth = () => {
     console.log(formData);
     // Differentiate if we are Signing Up or Signing In
     if (isSignup) {
+      console.log("Auth.js - Calling dispatch(signup)");
       dispatch(signup(formData, navigate));
     } else {
       dispatch(signin(formData, navigate));
@@ -75,7 +76,6 @@ const Auth = () => {
       dispatch({ type: AUTH, data: { result, token } });
 
       navigate("/");
-      // Sort this out
     } catch (error) {
       console.log(error);
     }

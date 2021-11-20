@@ -6,6 +6,16 @@ import axios from "axios";
 
 const API = axios.create({ baseURL: "http://localhost:5000" });
 
+// API Interceptor
+// We add the token to our req.headers so that on the back end (middleware/auth), we cam verify token.
+API.interceptors.request.use((req) => {
+  if (localStorage.getItem("profile")) {
+    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token}`;
+  }
+
+  return req;
+});
+
 // API end points
 export const fetchPosts = () => API.get("/posts");
 
