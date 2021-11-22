@@ -3,7 +3,7 @@ import axios from "axios";
 // This was our local host when we were testing.
 // const API = axios.create({ baseURL: "http://localhost:5000" });
 
-const API = axios.create({ baseURL: "https://photodiary-thangzathang.herokuapp.com/posts" });
+const API = axios.create({ baseURL: "https://photodiary-thangzathang.herokuapp.com" });
 
 // API Interceptor
 // We add the token to our req.headers so that on the back end (middleware/auth), we cam verify token and set req.userID.
