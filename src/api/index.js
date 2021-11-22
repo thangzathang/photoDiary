@@ -1,13 +1,12 @@
 import axios from "axios";
 
-// const url = "https://memories-thangzathang.herokuapp.com/posts";
+// This was our local host when we were testing.
+// const API = axios.create({ baseURL: "http://localhost:5000" });
 
-// const API = axios.create({ baseURL: "https://memories-thangzathang.herokuapp.com" });
-
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({ baseURL: "https://photodiary-thangzathang.herokuapp.com/posts" });
 
 // API Interceptor
-// We add the token to our req.headers so that on the back end (middleware/auth), we cam verify token.
+// We add the token to our req.headers so that on the back end (middleware/auth), we cam verify token and set req.userID.
 API.interceptors.request.use((req) => {
   if (localStorage.getItem("profile")) {
     req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem("profile")).token}`;
