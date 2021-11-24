@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 
 // Styles and images
 import useStyles from "./styles";
-import memories from "../../images/memories.png";
+import photoDiaryLogo from "../../images/photoDiaryLogo.png";
 
 const Navbar = () => {
   const classes = useStyles();
@@ -45,7 +45,7 @@ const Navbar = () => {
         <Typography component={Link} to="/" className={classes.heading} variant="h2" align="center">
           PhotoDiary
         </Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
+        <img className={classes.image} src={photoDiaryLogo} alt="icon" height="60" />
       </div>
       <Toolbar className={classes.toolbar}>
         {user?.result ? (
